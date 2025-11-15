@@ -1,38 +1,42 @@
-# Análisis de gastos desde datos exportados de Monefy
+# Análisis de datos de Monefy (monefy_eda.ipynb)
 
-Este proyecto toma un archivo CSV exportado desde la aplicación Monefy y lo transforma en un informe claro y útil sobre los gastos personales. El objetivo es convertir los datos brutos en información ordenada, comprensible y lista para tomar decisiones.
+Este notebook realiza un análisis exploratorio de un archivo CSV exportado desde la aplicación Monefy. El objetivo es transformar los datos originales en información útil para revisar gastos, ingresos y patrones financieros del periodo analizado.
 
-## Proceso del análisis
+## Qué hace este análisis
 
-1. Carga del archivo  
-   Se importa el CSV de Monefy y se visualizan las primeras filas para verificar su estructura.
+1. Carga del archivo CSV  
+   Se importa el dataset exportado desde Monefy y se revisa su estructura básica para asegurar que los datos vienen correctamente formateados.
 
-2. Limpieza de datos  
-   Se convierten las cantidades de dinero a formato numérico y se normalizan las fechas.  
-   Esto permite realizar cálculos correctos y trabajar con fechas como valores reales.
+2. Limpieza de cantidades  
+   Los valores monetarios de Monefy vienen con diferentes formatos.  
+   En el notebook se convierten estas cantidades a valores numéricos utilizables para cálculos.
 
-3. Identificación del tipo de movimiento  
-   Cada registro del archivo se clasifica como gasto, ingreso, transferencia o saldo inicial.  
-   Esto permite separar el dinero realmente gastado de los movimientos internos entre cuentas.
+3. Conversión y extracción de fechas  
+   La fecha se transforma a formato datetime y se crean columnas como año, mes, día y día de la semana.  
+   Esto permite organizar y analizar los movimientos por periodos.
 
-4. Resumen general  
-   Se calcula el total de ingresos, gastos reales, neto del periodo y medias diarias.  
-   Con ello se obtiene una visión rápida de la salud financiera del periodo analizado.
+4. Clasificación de movimientos  
+   Cada registro se identifica como gasto, ingreso, transferencia o saldo inicial.  
+   Esto permite separar los gastos reales de movimientos internos entre cuentas.
 
-5. Análisis por categorías y cuentas  
-   Se identifican las categorías donde más se gasta y las cuentas desde las que salen los gastos.  
-   Esto permite detectar hábitos, áreas de mayor gasto y patrones de uso de cada cuenta.
+5. Resumen general del periodo  
+   El notebook calcula:
+   - total de gastos reales  
+   - total de ingresos reales  
+   - neto del periodo  
+   - gasto medio diario  
+   También muestra los días con mayor o menor movimiento económico.
 
-6. Flujo diario  
-   Se genera una serie temporal del gasto/ingreso de cada día del periodo.  
-   Esto permite ver picos, tendencias o días con movimiento inusual.
+6. Análisis por categorías y cuentas  
+   Se determina en qué categorías se gasta más y desde qué cuentas salen los movimientos principales.
 
-## Objetivo final
+7. Flujo económico diario  
+   Se genera una serie temporal que muestra el movimiento neto de cada día del periodo.  
+   Esto permite detectar picos y tendencias.
 
-El análisis permite convertir los datos exportados desde Monefy en:
-- información clara,
-- métricas útiles,
-- gráficos interpretables,
-- y un resumen general fácil de revisar.
+8. Funciones reutilizables  
+   El notebook incluye funciones para reutilizar este mismo análisis con cualquier CSV futuro de Monefy, cambiando únicamente la ruta del archivo.
 
-Además, incluye funciones reutilizables para analizar cualquier futuro archivo CSV de Monefy cambiando solo la ruta del archivo.
+## Objetivo general
+
+Convertir los datos de Monefy en una visión clara del comportamiento financiero, permitiendo detectar hábitos de gasto, tendencias diarias y patrones entre cuentas y categorías de manera sencilla y automatizada.
