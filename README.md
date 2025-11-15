@@ -1,4 +1,4 @@
-# Análisis de datos de Monefy (monefy_eda.ipynb)
+# Análisis de datos de Monefy
 
 Este notebook realiza un análisis exploratorio de un archivo CSV exportado desde la aplicación Monefy. El objetivo es transformar los datos originales en información útil para revisar gastos, ingresos y patrones financieros del periodo analizado.
 
